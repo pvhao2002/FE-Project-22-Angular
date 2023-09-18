@@ -1,4 +1,10 @@
-.img-logo{
+.img-logo {
   width: 10%;
   height: 10%;
+}
+
+@media (max-width: 900px) {
+  .gr-btn-auth {
+    flex-direction: column;
+  }
 }

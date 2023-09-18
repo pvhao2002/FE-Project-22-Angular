@@ -1,2 +1,22 @@
-<a (click)="this.login(true);" routerLink="/admin">Admin</a>
-<a (click)="this.login(false);" routerLink="/">Client</a>
+<section class="m-auto w-75 d-flex justify-content-center align-items-center wrapper">
+  <form action="">
+    <h1>Đăng nhập</h1>
+    <div class="input-box">
+      <input type="text" id="username" placeholder="Tên đăng nhập" required>
+    </div>
+    <div class="input-box">
+      <input type="password" placeholder="*******" required>
+    </div>
+    <div class="remember-forgot">
+      <label>
+        <input type="checkbox">Nhớ mật khẩu
+      </label>
+      <a href="#." (click)="false">Quên mật khẩu?</a>
+    </div>
+    <button type="submit" class="btn">Đăng nhập</button>
+
+    <div class="register-link">
+      <p>Chưa có tài khoản?<a href="/register"> Đăng ký</a></p>
+    </div>
+  </form>
+</section>

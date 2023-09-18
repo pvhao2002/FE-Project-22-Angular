@@ -4,11 +4,17 @@
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  padding-top: 78px;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+//@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
