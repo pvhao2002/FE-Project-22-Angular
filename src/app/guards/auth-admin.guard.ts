@@ -8,7 +8,7 @@ import {
   providedIn: 'root', // you can change to any level if needed
 })
 
-class AuthService {
+class AuthAdminService {
   constructor(private router: Router) {
   }
 
@@ -17,14 +17,14 @@ class AuthService {
     state: RouterStateSnapshot
   ): boolean {
     const user = localStorage.getItem('user');
-    if (!(user && JSON.parse(user))) {
-      this.router.navigate(['/login']).then();
+    if (!(user && JSON.parse(user) && JSON.parse(user).roleId === 1)) {
+      this.router.navigate(['/']).then();
       return false;
     }
     return true;
   }
 }
 
-export const AuthGuard: CanActivateFn = (next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean => {
-  return inject(AuthService).canActivate(next, state);
+export const AuthAdminGuard: CanActivateFn = (next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean => {
+  return inject(AuthAdminService).canActivate(next, state);
 }

@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from 'src/material.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {AdminModule} from './admin/admin.module';
@@ -26,6 +26,7 @@ import {MdbScrollspyModule} from 'mdb-angular-ui-kit/scrollspy';
 import {MdbTabsModule} from 'mdb-angular-ui-kit/tabs';
 import {MdbTooltipModule} from 'mdb-angular-ui-kit/tooltip';
 import {MdbValidationModule} from 'mdb-angular-ui-kit/validation';
+import {NgxSpinner, NgxSpinnerModule} from "ngx-spinner";
 
 @NgModule({
   declarations: [AppComponent],
@@ -55,9 +56,16 @@ import {MdbValidationModule} from 'mdb-angular-ui-kit/validation';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    NgxSpinnerModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
+  exports: [
+    NgxSpinnerModule,
+  ],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 }

@@ -10,25 +10,25 @@ const routes: Routes = [
   {
     path: '',
     component: ClientComponent,
-    pathMatch: 'full',
     children: [
       {
         path: '',
         component: HomeComponent
       },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      }, {
+        path: 'about',
+        component: AboutComponent
+      }
     ]
   },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  }, {
-    path: 'about',
-    component: AboutComponent
-  }
+
 ];
 
 @NgModule({

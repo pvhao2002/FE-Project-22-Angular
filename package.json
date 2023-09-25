@@ -30,6 +30,7 @@
     "mdb-angular-ui-kit": "^5.0.0",
     "mdb-ui-kit": "^6.4.1",
     "ng-zorro-antd": "^16.1.0",
+    "ngx-spinner": "^16.0.2",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

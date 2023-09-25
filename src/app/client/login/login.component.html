@@ -1,11 +1,13 @@
 <section class="m-auto w-75 d-flex justify-content-center align-items-center wrapper">
-  <form action="">
+  <form (ngSubmit)="onSubmit()">
     <h1>Đăng nhập</h1>
+    <ng-container *ngIf="message === ''; else messageDiv">
+    </ng-container>
     <div class="input-box">
-      <input type="text" id="username" placeholder="Tên đăng nhập" required>
+      <input type="text" id="username" placeholder="Tên đăng nhập" name="username" [(ngModel)]="form.username" required>
     </div>
     <div class="input-box">
-      <input type="password" placeholder="*******" required>
+      <input type="password" placeholder="*******" name="password" [(ngModel)]="form.password" required>
     </div>
     <div class="remember-forgot">
       <label>
@@ -20,3 +22,15 @@
     </div>
   </form>
 </section>
+<ng-template #messageDiv>
+  <div class="alert alert-danger" role="alert">
+    <strong>{{this.message}}</strong>
+  </div>
+</ng-template>
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  template="<img src='/assets/images/loading.webp' alt=''/>"
+  [fullScreen]="true"
+>
+</ngx-spinner>
+

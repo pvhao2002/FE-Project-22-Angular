@@ -9,6 +9,8 @@ import {BannerComponent} from './banner/banner.component';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {AboutComponent} from './about/about.component';
+import {FormsModule} from "@angular/forms";
+import {NgxSpinnerModule} from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -24,8 +26,10 @@ import {AboutComponent} from './about/about.component';
   imports: [
     CommonModule,
     ClientRoutingModule,
+    FormsModule,
+    NgxSpinnerModule,
   ],
-  exports: [ClientComponent],
+  exports: [ClientComponent, HeaderComponent, FooterComponent],
 })
 export class ClientModule {
 }
