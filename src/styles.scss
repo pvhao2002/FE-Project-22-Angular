@@ -4,7 +4,10 @@
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands";
-
+@import "node_modules/@icon/themify-icons/themify-icons.css";
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import "node_modules/flexslider/flexslider-rtl-min.css";
 * {
   margin: 0;
   padding: 0;
@@ -17,4 +20,3 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
-//@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';

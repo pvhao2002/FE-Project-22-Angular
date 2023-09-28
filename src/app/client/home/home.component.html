@@ -1,3 +1,98 @@
 <main class="bg-transparent">
   <app-banner></app-banner>
+
+  <!--  Section show top 12 new product -->
+  <div class="product-area section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h2 class="text-center">Trending sản phẩm</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="product-info">
+            <div class="tab-content" id="myTabContent">
+              <!-- Start Single Tab -->
+              <div class="tab-pane fade show active" id="man" role="tabpanel">
+                <div class="tab-single">
+                  <div class="row">
+
+                    <ng-container *ngFor="let item of listProduct">
+                      <div class="col-xl-3 col-lg-4 col-md-4 col-12 mb-3">
+                        <div class="product-card">
+                          <img [src]="item.image" alt="SP" (click)="openProduct(item.id)">
+                          <h4>{{item.productName}}</h4>
+                          <div>
+                            <span>{{item.price | currency:'VND':'symbol':'1.0-0'}}</span>
+                            <button (click)="addToCart(item)">+</button>
+                          </div>
+                        </div>
+                      </div>
+                    </ng-container>
+
+                  </div>
+                </div>
+              </div>
+              <!--/ End Single Tab -->
+
+              <!--/ End Single Tab -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="shop-services section home mt-2">x
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-12">
+          <!-- Start Single Service -->
+          <div class="single-service">
+            <i class="fa fa-rocket" aria-hidden="true"></i>
+            <h4>Miễn phí giao hàng</h4>
+            <p>Hóa đơn trên 200,000đ</p>
+          </div>
+          <!-- End Single Service -->
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!-- Start Single Service -->
+          <div class="single-service">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            <h4>Hoàn hàng miễn phí</h4>
+            <p>Đổi trả trong 30ngày</p>
+          </div>
+          <!-- End Single Service -->
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!-- Start Single Service -->
+          <div class="single-service">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <h4>Thanh toán tiện lợi</h4>
+            <p>Nhiều phương thức thanh toán</p>
+          </div>
+          <!-- End Single Service -->
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <!-- Start Single Service -->
+          <div class="single-service">
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            <h4>Giá tốt nhất</h4>
+            <p>Có nhiều chương trình ưu đãi</p>
+          </div>
+          <!-- End Single Service -->
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  template="<img src='/assets/images/loading.webp' alt=''/>"
+  [fullScreen]="true"
+>
+</ngx-spinner>

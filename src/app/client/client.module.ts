@@ -11,6 +11,9 @@ import {RegisterComponent} from "./register/register.component";
 import {AboutComponent} from './about/about.component';
 import {FormsModule} from "@angular/forms";
 import {NgxSpinnerModule} from "ngx-spinner";
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductShopComponent } from './product-shop/product-shop.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import {NgxSpinnerModule} from "ngx-spinner";
     LoginComponent,
     RegisterComponent,
     AboutComponent,
+    ProductItemComponent,
+    ProductShopComponent,
+    CartComponent,
   ],
   imports: [
     CommonModule,
