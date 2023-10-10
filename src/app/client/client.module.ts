@@ -9,11 +9,14 @@ import {BannerComponent} from './banner/banner.component';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {AboutComponent} from './about/about.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgxSpinnerModule} from "ngx-spinner";
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductShopComponent } from './product-shop/product-shop.component';
 import { CartComponent } from './cart/cart.component';
+import { ThanksComponent } from './thanks/thanks.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { MyOrderComponent } from './my-order/my-order.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,17 @@ import { CartComponent } from './cart/cart.component';
     ProductItemComponent,
     ProductShopComponent,
     CartComponent,
+    ThanksComponent,
+    CheckoutComponent,
+    MyOrderComponent,
   ],
-  imports: [
-    CommonModule,
-    ClientRoutingModule,
-    FormsModule,
-    NgxSpinnerModule,
-  ],
+    imports: [
+        CommonModule,
+        ClientRoutingModule,
+        FormsModule,
+        NgxSpinnerModule,
+        ReactiveFormsModule,
+    ],
   exports: [ClientComponent, HeaderComponent, FooterComponent],
 })
 export class ClientModule {

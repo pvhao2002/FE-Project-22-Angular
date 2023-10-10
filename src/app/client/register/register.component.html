@@ -1,20 +1,34 @@
 <section class="m-auto w-75 d-flex justify-content-center align-items-center wrapper">
-  <form action="">
+  <form (ngSubmit)="onSubmit()">
     <h1>Đăng ký</h1>
+    <ng-container *ngIf="message === ''; else messageDiv">
+    </ng-container>
     <div class="input-box">
-      <input type="text" placeholder="Tên đăng nhập" required>
+      <input type="text" id="username" placeholder="Tên đăng nhập" name="username" [(ngModel)]="form.username" required>
     </div>
     <div class="input-box">
-      <input type="password" placeholder="Mật khẩu" required>
+      <input type="password" placeholder="*******" name="password" [(ngModel)]="form.password" required>
     </div>
     <div class="input-box">
-      <input type="password" placeholder="Xác nhận mật khẩu" required>
+      <input type="text" placeholder="Nguyễn Văn A" name="fullName" [(ngModel)]="form.fullName" required>
     </div>
 
-    <button type="submit" class="btn">Đăng ký</button>
+    <button type="submit" class="btn mt-1">Đăng ký</button>
 
-    <div class="login-link">
+    <div class="register-link">
       <p>Đã có tài khoản?<a href="/login"> Đăng nhập</a></p>
     </div>
   </form>
 </section>
+<ng-template #messageDiv>
+  <div class="alert alert-danger" role="alert">
+    <strong>{{this.message}}</strong>
+  </div>
+</ng-template>
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  template="<img src='/assets/images/loading.webp' alt=''/>"
+  [fullScreen]="true"
+>
+</ngx-spinner>
+

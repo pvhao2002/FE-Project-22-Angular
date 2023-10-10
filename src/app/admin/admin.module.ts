@@ -13,6 +13,7 @@ import {ListUserComponent} from "./user/list/list.component";
 import {ListProductComponent} from "./product/list/list.component";
 import {AddProductComponent} from "./product/add/add.component";
 import {EditProductComponent} from "./product/edit/edit.component";
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {EditProductComponent} from "./product/edit/edit.component";
     EditUserComponent,
     ListProductComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    OrderComponent
     ],
   imports: [CommonModule, AdminRoutingModule, FormsModule, ReactiveFormsModule, NgxSpinnerModule],
   exports: [

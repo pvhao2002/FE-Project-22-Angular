@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CartService} from "../cart/cart.service";
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,10 @@ import {Component, Input, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input() isLogin = false;
+  constructor(
+    private cartService: CartService,
+  ) {
+  }
 
   ngOnInit(): void {
     const user = localStorage.getItem('user');
@@ -17,6 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    this.cartService.clearCart();
     localStorage.removeItem('user');
     this.isLogin = false;
   }

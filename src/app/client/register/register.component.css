@@ -86,23 +86,22 @@ form {
   cursor: pointer;
   color: #333;
   font-weight: 700;
-  margin-top: 12px;
 }
 
-.wrapper .login-link {
+.wrapper .register-link {
   font-size: 14.5px;
   text-align: center;
   margin: 20px 0 15px;
 
 }
 
-.login-link p a {
+.register-link p a {
   color: #0ed045;
   text-decoration: none;
   font-weight: 600;
 }
 
-.login-link p a:hover {
+.register-link p a:hover {
   text-decoration: none;
   color: black;
 }

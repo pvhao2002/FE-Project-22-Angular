@@ -9,6 +9,9 @@ import {ProductShopComponent} from "./product-shop/product-shop.component";
 import {ProductItemComponent} from "./product-item/product-item.component";
 import {CartComponent} from "./cart/cart.component";
 import {AuthGuard} from "../guards/auth.guard";
+import {ThanksComponent} from "./thanks/thanks.component";
+import {CheckoutComponent} from "./checkout/checkout.component";
+import {MyOrderComponent} from "./my-order/my-order.component";
 
 const routes: Routes = [
   {
@@ -17,6 +20,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
         component: HomeComponent
       },
       {
@@ -39,6 +47,19 @@ const routes: Routes = [
         path: 'cart',
         canActivate: [AuthGuard],
         component: CartComponent
+      }, {
+        path: 'check-out',
+        canActivate: [AuthGuard],
+        component: CheckoutComponent
+      },
+      {
+        path: 'thank-you',
+        canActivate: [AuthGuard],
+        component: ThanksComponent
+      }, {
+        path: 'my-order',
+        canActivate: [AuthGuard],
+        component: MyOrderComponent
       }
     ]
   },

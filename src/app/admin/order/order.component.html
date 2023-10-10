@@ -1,0 +1,43 @@
+<main>
+  <div class="container-fluid px-4">
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Trang chủ</li>
+      <li class="breadcrumb-item">Hóa đơn</li>
+    </ol>
+    <div class="table-responsive" style="max-height: 70vh;">
+      <table class="table table-hover table-striped table-bordered">
+        <thead class="bg-primary position-sticky top-0">
+        <tr>
+          <th style="width: 10%;">STT</th>
+          <th style="width: 10%;">Tên khách hàng</th>
+          <th style="width: 20%;">Địa chỉ dặt hàng</th>
+          <th style="width: 10%;">Số điện thoại</th>
+          <th style="width: 10%;">Giá tiền</th>
+          <th style="width: 15%;">Ghi chú</th>
+          <th style="width: 15%;">Ngày mua</th>
+          <th style="width: 10%;">Trạng thái</th>
+        </tr>
+        </thead>
+        <ng-container *ngFor="let item of listOrder; index as i">
+          <tr>
+            <td>{{i + 1}}</td>
+            <td>{{item.user.fullName}}</td>
+            <td>{{item.address | slice:0:20}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.total | currency:'VND':'symbol':'1.0-0'}}</td>
+            <td>{{item.note | slice:0:20}}</td>
+            <td>{{item.createdAt }}</td>
+            <td>{{item.status}}</td>
+          </tr>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+</main>
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  template="<img src='/assets/images/loading.webp' alt=''/>"
+  [fullScreen]="true"
+>
+</ngx-spinner>
+
