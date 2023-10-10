@@ -1,0 +1,42 @@
+<section id="content" class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>Bảng nhập thông tin cho tài khoản</h1>
+    <span [ngClass]="{'success':success, 'error':!success}">{{this.message}}</span>
+    <label for="username"><b>Tên đăng nhập</b></label>
+    <input type="text" placeholder="Nhập tên đăng nhập" formControlName="username" id="username" required>
+    <div *ngIf="form.get('username')?.hasError('required')" class="text-danger">
+      Vui lòng nhập tên đăng nhập.
+    </div>
+
+    <label for="password"><b>Mật khẩu</b></label>
+    <input type="password" placeholder="Nhập mật khẩu" formControlName="password" id="password" required>
+    <div *ngIf="form.get('password')?.hasError('required')" class="text-danger">
+      Vui lòng nhập mật khẩu.
+    </div>
+
+    <label for="fullname"><b>Họ và tên</b></label>
+    <input type="text" placeholder="Nhập họ và tên" formControlName="fullName" id="fullname" required>
+    <div *ngIf="form.get('fullName')?.hasError('required')" class="text-danger">
+      Vui lòng nhập họ và tên.
+    </div>
+
+    <label for="role"><b>Quyền</b></label>
+    <select formControlName="roleId" id="role">
+      <option value="" selected>Chọn quyền</option>
+      <option *ngFor="let item of roleOptions" [value]="item.id">{{ item.role_name }}</option>
+    </select>
+    <div *ngIf="form.get('roleId')?.hasError('required')" class="text-danger">
+      Vui lòng chọn quyền.
+    </div>
+
+    <div class="clearfix">
+      <input type="submit" name="add" value="Thêm" class="btnAdd">
+    </div>
+  </form>
+</section>
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  template="<img src='/assets/images/loading.webp' alt=''/>"
+  [fullScreen]="true"
+>
+</ngx-spinner>

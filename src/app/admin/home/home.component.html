@@ -1,0 +1,63 @@
+<main class="container-fluid">
+  <div class="container-fluid px-4">
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Trang chủ</li>
+    </ol>
+    <hr />
+  </div>
+  <div class="row mx-5">
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">Tài khoản còn hoạt động</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="small text-white">Số lượng: {{dashboard.totalActiveUser}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">Tài khoản ngưng hoạt động</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="small text-white">Số lượng: {{dashboard.totalInactiveUser}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card bg-primary text-white mb-4">
+        <div class="card-body">Sản phẩm</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+          <div class="small text-white">Số lượng: {{dashboard.totalProduct}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="card bg-primary text-white mb-4">
+        <div class="card-body">Đơn hàng</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+          <div class="small text-white">Số lượng: {{dashboard.totalOrders}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="card bg-primary text-white mb-4">
+        <div class="card-body">Số lượng sản phẩm bán được</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+          <div class="small text-white">Số lượng: {{dashboard.totalProductSales}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+      <div class="card bg-primary text-white mb-4">
+        <div class="card-body">Doanh thu</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+          <div class="small text-white">Số tiền: {{dashboard.totalRevenue | currency : 'VND'}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

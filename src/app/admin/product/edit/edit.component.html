@@ -1,0 +1,55 @@
+<section id="content" class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>Bảng nhập thông tin cho tài khoản</h1>
+    <span [ngClass]="{'success':success, 'error':!success}">{{this.message}}</span>
+    <input type="hidden" formControlName="id"/>
+    <label for="productName"><b>Tên sản phẩm</b></label>
+    <input type="text" placeholder="Nhập tên sản phẩm" formControlName="productName" id="productName" required>
+    <div *ngIf="form.get('productName')?.hasError('required')" class="text-danger">
+      Vui lòng nhập tên sản phẩm
+    </div>
+
+    <label for="category"><b>Thể loại</b></label>
+    <input type="text" placeholder="Nhập thể loại" formControlName="category" id="category" required>
+    <div *ngIf="form.get('category')?.hasError('required')" class="text-danger">
+      Vui lòng nhập thể loại
+    </div>
+
+    <label for="description"><b>Mô tả</b></label>
+    <input type="text" placeholder="Nhập mô tả" formControlName="description" id="description" required>
+    <div *ngIf="form.get('description')?.hasError('required')" class="text-danger">
+      Vui lòng nhập mô tả
+    </div>
+
+    <label for="author"><b>Tác giả</b></label>
+    <input type="text" placeholder="Nhập tác giả" formControlName="author" id="author" required>
+    <div *ngIf="form.get('author')?.hasError('required')" class="text-danger">
+      Vui lòng nhập tác giả.
+    </div>
+
+    <label for="price"><b>Giá</b></label>
+    <input type="text" placeholder="Nhập giá" formControlName="price" id="price" required pattern="[0-9]+">
+    <div *ngIf="form.get('price')?.hasError('required')" class="text-danger">
+      Vui lòng nhập giá.
+    </div>
+    <div *ngIf="form.get('price')?.hasError('pattern')" class="text-danger">
+      Giá phải là số nguyên dương.
+    </div>
+
+    <label for="image"><b>Hình ảnh</b></label>
+    <input type="text" placeholder="Nhập hình ảnh" formControlName="image" id="image" required>
+    <div *ngIf="form.get('image')?.hasError('required')" class="text-danger">
+      Vui lòng nhập hình ảnh.
+    </div>
+
+    <div class="clearfix">
+      <input type="submit" name="add" value="Sửa" class="btnAdd">
+    </div>
+  </form>
+</section>
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  template="<img src='/assets/images/loading.webp' alt=''/>"
+  [fullScreen]="true"
+>
+</ngx-spinner>

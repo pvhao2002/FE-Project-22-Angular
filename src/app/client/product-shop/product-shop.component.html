@@ -1,0 +1,55 @@
+<div class="product-area section overflow-scroll" style="height: 90vh;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h2 class="text-center">Danh sách sản phẩm</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="product-info">
+          <div class="tab-content" id="myTabContent">
+            <!-- Start Single Tab -->
+            <div class="tab-pane fade show active" id="man" role="tabpanel">
+              <div class="tab-single">
+                <div class="row">
+
+                  <ng-container *ngIf="listProduct.length > 0; else noProduct">
+                    <ng-container *ngFor="let item of listProduct">
+                      <div class="col-xl-3 col-lg-4 col-md-4 col-12 mb-3">
+                        <div class="product-card">
+                          <img [src]="item.image" alt="SP" (click)="openProduct(item.id)">
+                          <h4>{{item.productName}}</h4>
+                          <div>
+                            <span>{{item.price | currency:'VND':'symbol':'1.0-0'}}</span>
+                            <button (click)="this.addToCart(item)">+</button>
+                          </div>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+            <!--/ End Single Tab -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noProduct>
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Không tìm thấy sản phẩm nào!</h4>
+        <p>Sản phẩm thuộc mặt hàng này đang tạm ngưng.</p>
+        <hr>
+        <p class="mb-0">Vui lòng thử lại với từ khóa khác.</p>
+      </div>
+    </div>
+  </div>
+</ng-template>

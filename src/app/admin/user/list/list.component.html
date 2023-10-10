@@ -1,0 +1,66 @@
+<main>
+  <div class="container-fluid px-4">
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Trang chủ</li>
+      <li class="breadcrumb-item">Tài khoản</li>
+    </ol>
+    <div class="d-flex mb-2">
+      <a href="/admin/user/add" class="btn btn-primary my-2 my-sm-0">Thêm</a>
+    </div>
+    <div class="table-responsive" style="max-height: 70vh;">
+      <table class="table table-hover table-striped table-bordered">
+        <thead class="bg-primary position-sticky top-0">
+        <tr>
+          <th>STT</th>
+          <th>Tên đăng nhập</th>
+          <th>Mật khẩu</th>
+          <th>Họ tên</th>
+          <th>Quyền</th>
+          <th>Trạng thái</th>
+          <th>#</th>
+        </tr>
+        </thead>
+        <ng-container *ngFor="let item of listUser; index as i">
+          <tr>
+            <td>{{i + 1}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.password}}</td>
+            <td>{{item.fullName}}</td>
+            <td>{{item.role.name}}</td>
+            <td>{{item.isDeleted === true ? 'Không hoạt động' : 'Còn hoạt động'}}</td>
+            <td class="btn btn-group">
+              <a href="/admin/user/edit/{{item.id}}" class="btn btn-success text-bg-warning me-1">Sửa</a>
+              <button *ngIf="item.isDeleted === false" type="button" class="btn btn-primary text-bg-danger" data-bs-toggle="modal"
+                      data-bs-target="#exampleModal" (click)="delete(item.id)">
+                Xoá
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+</main>
+<ngx-spinner
+  bdColor="rgba(51, 51, 51, 0.8)"
+  template="<img src='/assets/images/loading.webp' alt=''/>"
+  [fullScreen]="true"
+>
+</ngx-spinner>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Xóa tài khoản</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Xác nhận xóa tài khoản này?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="cancel()">Đóng</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="confirm()">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
